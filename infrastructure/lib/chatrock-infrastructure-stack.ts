@@ -1,5 +1,8 @@
+// Import the entire 'aws-cdk-lib' and store it as cdk. 'aws-cdk-lib' is the main library for AWS Cloud Development
 import * as cdk from 'aws-cdk-lib';
 import { AttributeType, BillingMode, Table } from 'aws-cdk-lib/aws-dynamodb';
+// Import Construct class from the 'constructs' module that represents a node in the CDK tree structure and is used to 
+// define AWS resources or higher-level constructs
 import { Construct } from 'constructs';
 
 export class ChatRockIntfrastructureStack extends cdk.Stack {
