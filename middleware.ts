@@ -1,3 +1,4 @@
+// middleware.ts custom middleware that enforces Clerk Authentication
 import { authMiddleware } from '@clerk/nextjs';
 
 export default authMiddleware({
