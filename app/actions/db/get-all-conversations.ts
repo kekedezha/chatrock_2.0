@@ -22,6 +22,7 @@ export const getAllConversations = async (includeDeprecated = false) => {
       })
     );
 
+    console.log("Here are the returned items from the database: " + Items)
     const parsedPrompts = conversationSchema.array().nullish().parse(Items);
 
     // If the request wants to return deprecated ones, return all data

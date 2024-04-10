@@ -2,6 +2,7 @@
 import { authMiddleware } from '@clerk/nextjs';
 
 export default authMiddleware({
+  // Note: this line we've defined our auth pages as public routes to opt-out of authentication
   publicRoutes: ['/sign-in', '/sign-up'],
 });
 
