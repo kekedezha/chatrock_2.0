@@ -4,9 +4,11 @@
 // interacting with the Bedrock runtime environment. Bedrock is a toolkit for developing, building, deploying, and managing
 // cloud services. 
 import { BedrockRuntimeClient } from '@aws-sdk/client-bedrock-runtime'; 
+
 // Import the DynamoDB class from the '/client-dynamodb' module, that is specifically tailored for working with Amazon DynamoDB, 
 // which is a fully managed NoSQL database service provided by AWS
 import { DynamoDB } from '@aws-sdk/client-dynamodb';
+
 // Import the DynamoDBDocument class from the '/lib-dynamodb' module, that will provide an abstraction layer over the DynamoDB 
 // client, offering a simplified API for working with DynamoDB operations in a more JavaScript-native way. 
 import { DynamoDBDocument } from '@aws-sdk/lib-dynamodb';
