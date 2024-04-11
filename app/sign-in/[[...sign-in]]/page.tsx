@@ -11,7 +11,7 @@ export default function Page() {
       </h2>
       <SignIn
         appearance={{
-          elements: { footer: 'hidden', formButtonPrimary: 'bg-violet-700' },
+          elements: { footer: 'hidden', formButtonPrimary: 'bg-blue-900' },
         }}
       />
       <div className="flex flex-row gap-1 text-sm">

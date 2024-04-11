@@ -21,11 +21,11 @@ export async function Sidebar() {
       <header className="flex flex-row gap-2 justify-between items-center">
         <Link href="/" className="flex flex-row gap-2 items-center">
           <Icon />
-          <p className="text-gray-700 font-bold">Chatrock</p>
+          <p className="text-gray-700 font-bold">ChatRock</p>
         </Link>
         <Link
           href="/"
-          className='flex flex-row justify-start items-center group bg-slate-200 p-2 h-max rounded-sm hover:bg-slate-100 transiiton-all ease-in-out duration-300"'
+          className='flex flex-row justify-start items-center group bg-slate-200 p-2 h-max rounded-sm hover:bg-slate-100 transition-all ease-in-out duration-300"'
         >
           <IoAddOutline />
         </Link>
