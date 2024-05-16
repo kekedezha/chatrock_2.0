@@ -4,7 +4,10 @@ import { generateResponse } from '@/app/actions/bedrock/generate-response';
 import { getOneConversation } from '@/app/actions/db/get-one-conversation';
 import { useConversation } from '@/context/conversation-context';
 import { useEffect } from 'react';
-import { MdOutlineComputer, MdOutlinePersonOutline } from 'react-icons/md';
+import { MdOutlinePersonOutline } from 'react-icons/md';
+import { FaMeta } from 'react-icons/fa6';
+import { useUser } from '@clerk/nextjs';
+import Image from 'next/image';
 
 interface IProps {
   uuid: string;
@@ -13,6 +16,8 @@ interface IProps {
 export function ConversationDisplay({ uuid }: IProps) {
   const { conversation, setConversation, isGenerating, setIsGenerating } =
     useConversation();
+
+  const { user } = useUser();
 
   // When the page loads for the first time, fetch the conversation for the page UUID from the DB and add it to the context
   useEffect(() => {
@@ -60,12 +65,21 @@ export function ConversationDisplay({ uuid }: IProps) {
           key={`${message.content}-${ind}`}
         >
           {message.author === conversation.pk ? (
-            <div className="bg-violet-400 rounded-sm p-2 text-white">
-              <MdOutlinePersonOutline size={20} />
+            <div className="text-white" style={{ width: 40, height: 40, position: 'relative', overflow: 'hidden', borderRadius: '50%' }}>
+              {user?.hasImage ? 
+                <Image 
+                  src={user.imageUrl}
+                  alt="User profile image"
+                  fill
+                  objectFit='cover'
+                />
+              :
+              <MdOutlinePersonOutline size={20}/>
+            }
             </div>
           ) : (
-            <div className="bg-green-400 rounded-sm p-2 text-white">
-              <MdOutlineComputer />
+            <div className="bg-green-400 rounded-sm p-2 text-white mr-4">
+              <FaMeta />
             </div>
           )}
           <p key={message.content}>{message.content}</p>

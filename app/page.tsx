@@ -6,6 +6,7 @@ export default function Home() {
       <div className="flex flex-col items-center gap-1 my-auto">
         <h1 className="font-bold text-2xl">What would you like to ask?</h1>
         <p>Ask me anything!</p>
+        <p className='text-xs'>ℹ Powered by Meta's Llama2 70b Chat v1</p>
       </div>
       <HomePromptInput />
     </main>
